@@ -34,16 +34,16 @@ connectDB();
 // }
 
 //setting routes
-// app.get('/', (req,res) => {
-//     UserModel.getUsers()
-//     .then(users => {
-//         res.json(users);
-//         console.log("Users List:",users);
-//      })
-//     .catch(err => {
-//         res.status(400).json(`Error ${err}`);
-//     })
-// })
+app.get('/', (req,res) => {
+    UserModel.getUsers()
+    .then(users => {
+        res.json(users);
+        console.log("Users List:",users);
+     })
+    .catch(err => {
+        res.status(400).json(`Error ${err}`);
+    })
+})
 
 app.post('/login',(req,res)=>{login.handleLogin(req,res,UserModel,bcrypt)})
     // let found = false;
